@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Assignment Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        h1 { color: #333; }
+        .launch-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .launch-btn:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <h1>Unit 3: Final Project Submission</h1>
+    <p>Click the button below to launch the final interactive portfolio module.</p>
+    
+    <!-- This button triggers the hidden about:blank tab -->
+    <button class="launch-btn" onclick="openGame()">Launch Module</button>
+
+    <script>
+        function openGame() {
+            // 1. Opens the empty window
+            var win = window.open('about:blank', '_blank');
+            var doc = win.document;
+            
+            // 2. Inserts an iframe pointing to an unblocked game source
+            // REPLACE THE URL BELOW WITH YOUR DESIRED GAME LINK
+            var gameUrl = "https://github.io"; 
+
+            doc.write(`
+                <html style="margin:0; padding:0; overflow:hidden;">
+                <head><title>Google Docs</title></head>
+                <body style="margin:0; padding:0;">
+                    <iframe src="${gameUrl}" 
+                            style="border:none; width:100vw; height:100vh; margin:0; padding:0;">
+                    </iframe>
+                </body>
+                </html>
+            `);
+            doc.close();
+        }
+    </script>
+
+</body>
+</html>
